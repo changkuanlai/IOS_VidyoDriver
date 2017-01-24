@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelecterWayView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0Z-sC-PfO">
+                    <rect key="frame" x="19" y="233" width="338" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择通话方式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDx-9x-qNm">
+                            <rect key="frame" x="104" y="10" width="130" height="26"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="130" id="KaR-ls-Dst"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEP-FW-Tm2">
+                            <rect key="frame" x="44" y="61" width="250" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.18065714760000001" blue="0.1290618986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="250" id="oM4-92-uRq"/>
+                                <constraint firstAttribute="height" constant="40" id="yvy-hy-bRh"/>
+                            </constraints>
+                            <state key="normal" title="视频方式"/>
+                            <connections>
+                                <action selector="videoWay" destination="iN0-l3-epB" eventType="touchUpInside" id="qkJ-7Y-crW"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5T-bg-azq">
+                            <rect key="frame" x="44" y="121" width="250" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.18065714760000001" blue="0.1290618986" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="语音方式"/>
+                            <connections>
+                                <action selector="VoiceWay:" destination="iN0-l3-epB" eventType="touchUpInside" id="FbG-Uq-ESk"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="XEP-FW-Tm2" firstAttribute="centerX" secondItem="h0Z-sC-PfO" secondAttribute="centerX" id="DSF-lD-y3b"/>
+                        <constraint firstItem="A5T-bg-azq" firstAttribute="top" secondItem="XEP-FW-Tm2" secondAttribute="bottom" constant="20" id="GFg-7d-7Gj"/>
+                        <constraint firstItem="XEP-FW-Tm2" firstAttribute="top" secondItem="CDx-9x-qNm" secondAttribute="bottom" constant="25" id="e23-tx-z2f"/>
+                        <constraint firstItem="CDx-9x-qNm" firstAttribute="centerX" secondItem="h0Z-sC-PfO" secondAttribute="centerX" id="f7K-M4-zaO"/>
+                        <constraint firstItem="A5T-bg-azq" firstAttribute="width" secondItem="XEP-FW-Tm2" secondAttribute="width" id="fzK-WQ-b99"/>
+                        <constraint firstItem="CDx-9x-qNm" firstAttribute="top" secondItem="h0Z-sC-PfO" secondAttribute="top" constant="10" id="g15-Ni-LsM"/>
+                        <constraint firstItem="A5T-bg-azq" firstAttribute="height" secondItem="XEP-FW-Tm2" secondAttribute="height" id="s7G-8C-lmo"/>
+                        <constraint firstItem="A5T-bg-azq" firstAttribute="centerX" secondItem="h0Z-sC-PfO" secondAttribute="centerX" id="xS3-ej-TcZ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="h0Z-sC-PfO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="0.25" id="CFn-go-Moj"/>
+                <constraint firstItem="h0Z-sC-PfO" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.3" id="WxD-YY-3s7"/>
+                <constraint firstItem="h0Z-sC-PfO" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="ZkL-kd-Akl"/>
+                <constraint firstItem="h0Z-sC-PfO" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pY7-xx-zPA"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="53.5" y="-22.5"/>
+        </view>
+    </objects>
+</document>

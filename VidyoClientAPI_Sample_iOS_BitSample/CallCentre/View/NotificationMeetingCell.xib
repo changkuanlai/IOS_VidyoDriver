@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="149" id="KGk-i7-Jjw" customClass="NotificationMeetingCell">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="149"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="338" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-12-12 05:12:21-2016-11-12 23:11:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-a0-36L">
+                        <rect key="frame" x="78" y="49" width="252" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XLM-SQ-pfA">
+                        <rect key="frame" x="18" y="49" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="20C-Im-5Qi"/>
+                            <constraint firstAttribute="width" constant="50" id="GDQ-Zm-SbJ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="22.5"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="会议标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLi-LZ-hyl">
+                        <rect key="frame" x="78" y="66" width="242" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="组织者：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIb-hG-SD3">
+                        <rect key="frame" x="78" y="99" width="242" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="GY5-a0-36L" secondAttribute="trailing" id="DDA-hC-5QS"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dIb-hG-SD3" secondAttribute="trailing" constant="10" id="Fr8-36-xxG"/>
+                    <constraint firstItem="bLi-LZ-hyl" firstAttribute="top" secondItem="GY5-a0-36L" secondAttribute="bottom" constant="5" id="K7y-9l-C2L"/>
+                    <constraint firstItem="bLi-LZ-hyl" firstAttribute="leading" secondItem="XLM-SQ-pfA" secondAttribute="trailing" constant="10" id="MJA-y8-PZO"/>
+                    <constraint firstItem="dIb-hG-SD3" firstAttribute="top" secondItem="bLi-LZ-hyl" secondAttribute="bottom" constant="10" id="QbW-oG-w8V"/>
+                    <constraint firstItem="XLM-SQ-pfA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="QcY-6g-LJR"/>
+                    <constraint firstItem="GY5-a0-36L" firstAttribute="top" secondItem="XLM-SQ-pfA" secondAttribute="top" id="Xt0-f8-CYR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="bLi-LZ-hyl" secondAttribute="trailing" constant="10" id="frf-Q1-pMD"/>
+                    <constraint firstItem="dIb-hG-SD3" firstAttribute="leading" secondItem="bLi-LZ-hyl" secondAttribute="leading" id="ii4-hm-Rxz"/>
+                    <constraint firstItem="GY5-a0-36L" firstAttribute="leading" secondItem="XLM-SQ-pfA" secondAttribute="trailing" constant="10" id="lQY-LP-JG2"/>
+                    <constraint firstItem="XLM-SQ-pfA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="zpd-BH-6Bu"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="image" destination="XLM-SQ-pfA" id="gYr-lK-mw5"/>
+                <outlet property="roomOrganizer" destination="dIb-hG-SD3" id="dpl-To-RK5"/>
+                <outlet property="roomtopic" destination="bLi-LZ-hyl" id="MiY-KL-xng"/>
+                <outlet property="startdateAndEnd" destination="GY5-a0-36L" id="kOV-kR-3bV"/>
+            </connections>
+            <point key="canvasLocation" x="46" y="66.5"/>
+        </tableViewCell>
+    </objects>
+</document>

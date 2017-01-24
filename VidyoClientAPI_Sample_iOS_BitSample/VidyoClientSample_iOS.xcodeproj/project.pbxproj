@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A5A6F091298BEA9004DA40B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5A6F081298BEA9004DA40B /* OpenGLES.framework */; };
+		1A5A6F111298BF87004DA40B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5A6F101298BF87004DA40B /* AudioToolbox.framework */; };
+		1A5A6FE81298CD85004DA40B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5A6FE71298CD85004DA40B /* QuartzCore.framework */; };
+		1A96AFBD1316070200993678 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A96AFBC1316070200993678 /* SystemConfiguration.framework */; };
+		1AB3C89712A43A56007B03C5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3C89612A43A56007B03C5 /* CoreVideo.framework */; };
+		1AB3C89F12A43AFC007B03C5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3C89E12A43AFC007B03C5 /* CoreMedia.framework */; };
+		1AB3C8A512A43B53007B03C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB3C8A412A43B53007B03C5 /* AVFoundation.framework */; };
+		1AD9C1DB12D8FB28009E04DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9C1DA12D8FB28009E04DC /* CFNetwork.framework */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2764BC511E37115B001064E9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764BC501E37115B001064E9 /* MobileCoreServices.framework */; };
+		2764BC551E373F0A001064E9 /* GuestloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2764BC531E373F0A001064E9 /* GuestloginViewController.m */; };
+		2764BC561E373F0A001064E9 /* GuestloginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2764BC541E373F0A001064E9 /* GuestloginViewController.xib */; };
+		2765DF6F1E2DE5C500BB847E /* LoginWindow.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF6D1E2DE5C500BB847E /* LoginWindow.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2765DF701E2DE5C500BB847E /* LoginWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2765DF6E1E2DE5C500BB847E /* LoginWindow.xib */; };
+		2765DF881E2DE5D900BB847E /* CallCentreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF741E2DE5D900BB847E /* CallCentreViewController.m */; };
+		2765DF891E2DE5D900BB847E /* CallCentreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2765DF751E2DE5D900BB847E /* CallCentreViewController.xib */; };
+		2765DF8A1E2DE5D900BB847E /* QueueStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF771E2DE5D900BB847E /* QueueStatusViewController.m */; };
+		2765DF8B1E2DE5D900BB847E /* QueueStatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2765DF781E2DE5D900BB847E /* QueueStatusViewController.xib */; };
+		2765DF8C1E2DE5D900BB847E /* VidyoVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF7A1E2DE5D900BB847E /* VidyoVideoViewController.m */; };
+		2765DF8D1E2DE5D900BB847E /* VidyoVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2765DF7B1E2DE5D900BB847E /* VidyoVideoViewController.xib */; };
+		2765DF8E1E2DE5D900BB847E /* NotificationMeetingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF7E1E2DE5D900BB847E /* NotificationMeetingModel.m */; };
+		2765DF8F1E2DE5D900BB847E /* ChatTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF811E2DE5D900BB847E /* ChatTextView.m */; };
+		2765DF901E2DE5D900BB847E /* NotificationMeetingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF831E2DE5D900BB847E /* NotificationMeetingCell.m */; };
+		2765DF911E2DE5D900BB847E /* NotificationMeetingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2765DF841E2DE5D900BB847E /* NotificationMeetingCell.xib */; };
+		2765DF921E2DE5D900BB847E /* SelecterWayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF861E2DE5D900BB847E /* SelecterWayView.m */; };
+		2765DF931E2DE5D900BB847E /* SelecterWayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2765DF871E2DE5D900BB847E /* SelecterWayView.xib */; };
+		2765DF961E2DF6FF00BB847E /* VidyoClientSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 2765DF951E2DF6FF00BB847E /* VidyoClientSample.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		27C591391E333FCA0002657E /* ESClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C591381E333FCA0002657E /* ESClient.m */; };
+		27C591481E35AFE70002657E /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C5913C1E35AFE70002657E /* AFHTTPSessionManager.m */; };
+		27C591491E35AFE70002657E /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C5913F1E35AFE70002657E /* AFNetworkReachabilityManager.m */; };
+		27C5914A1E35AFE70002657E /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C591411E35AFE70002657E /* AFSecurityPolicy.m */; };
+		27C5914B1E35AFE70002657E /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C591431E35AFE70002657E /* AFURLRequestSerialization.m */; };
+		27C5914C1E35AFE70002657E /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C591451E35AFE70002657E /* AFURLResponseSerialization.m */; };
+		27C5914D1E35AFE70002657E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C591471E35AFE70002657E /* AFURLSessionManager.m */; };
+		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		55263678174BCC89007219D6 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55263677174BCC89007219D6 /* ReleaseNotes.txt */; };
+		55563F1C174A9C28002416B3 /* VidyoClientLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55563F1B174A9C28002416B3 /* VidyoClientLib.a */; };
+		55563F1E174A9DCE002416B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55563F1D174A9DCE002416B3 /* Default-568h@2x.png */; };
+		55ACA12717E10CC000AD8DC1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ACA12617E10CC000AD8DC1 /* Security.framework */; };
+		55C58F9515AE17C8002AB90A /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C58F9415AE17C8002AB90A /* NSString+Base64.m */; };
+		94F244011A5C223200850B88 /* ca-certificates-base.crt in Resources */ = {isa = PBXBuildFile; fileRef = 94F244001A5C223200850B88 /* ca-certificates-base.crt */; };
+		F47F22C713FF0518006471AD /* main_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = F47F22C613FF0518006471AD /* main_ios.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F47F237413FF064B006471AD /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47F237313FF064B006471AD /* MainWindow.xib */; };
+		F47F242913FF11B9006471AD /* VidyoClientSample_iOS_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F47F242813FF11B9006471AD /* VidyoClientSample_iOS_AppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F483C315159E72C700F03FDD /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F483C314159E72C700F03FDD /* Icon.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A5A6F081298BEA9004DA40B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		1A5A6F101298BF87004DA40B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1A5A6FE71298CD85004DA40B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		1A96AFBC1316070200993678 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1AB3C89612A43A56007B03C5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		1AB3C89E12A43AFC007B03C5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		1AB3C8A412A43B53007B03C5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1AD9C1DA12D8FB28009E04DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D6058910D05DD3D006BFB54 /* VidyoClientSample_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidyoClientSample_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2764BC501E37115B001064E9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2764BC521E373F0A001064E9 /* GuestloginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestloginViewController.h; sourceTree = "<group>"; };
+		2764BC531E373F0A001064E9 /* GuestloginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestloginViewController.m; sourceTree = "<group>"; };
+		2764BC541E373F0A001064E9 /* GuestloginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GuestloginViewController.xib; sourceTree = "<group>"; };
+		2765DF6C1E2DE5C500BB847E /* LoginWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindow.h; sourceTree = "<group>"; };
+		2765DF6D1E2DE5C500BB847E /* LoginWindow.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = LoginWindow.mm; sourceTree = "<group>"; };
+		2765DF6E1E2DE5C500BB847E /* LoginWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindow.xib; sourceTree = "<group>"; };
+		2765DF731E2DE5D900BB847E /* CallCentreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallCentreViewController.h; sourceTree = "<group>"; };
+		2765DF741E2DE5D900BB847E /* CallCentreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallCentreViewController.m; sourceTree = "<group>"; };
+		2765DF751E2DE5D900BB847E /* CallCentreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CallCentreViewController.xib; sourceTree = "<group>"; };
+		2765DF761E2DE5D900BB847E /* QueueStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueStatusViewController.h; sourceTree = "<group>"; };
+		2765DF771E2DE5D900BB847E /* QueueStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueStatusViewController.m; sourceTree = "<group>"; };
+		2765DF781E2DE5D900BB847E /* QueueStatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QueueStatusViewController.xib; sourceTree = "<group>"; };
+		2765DF791E2DE5D900BB847E /* VidyoVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidyoVideoViewController.h; sourceTree = "<group>"; };
+		2765DF7A1E2DE5D900BB847E /* VidyoVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VidyoVideoViewController.m; sourceTree = "<group>"; };
+		2765DF7B1E2DE5D900BB847E /* VidyoVideoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VidyoVideoViewController.xib; sourceTree = "<group>"; };
+		2765DF7D1E2DE5D900BB847E /* NotificationMeetingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationMeetingModel.h; sourceTree = "<group>"; };
+		2765DF7E1E2DE5D900BB847E /* NotificationMeetingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationMeetingModel.m; sourceTree = "<group>"; };
+		2765DF801E2DE5D900BB847E /* ChatTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTextView.h; sourceTree = "<group>"; };
+		2765DF811E2DE5D900BB847E /* ChatTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTextView.m; sourceTree = "<group>"; };
+		2765DF821E2DE5D900BB847E /* NotificationMeetingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationMeetingCell.h; sourceTree = "<group>"; };
+		2765DF831E2DE5D900BB847E /* NotificationMeetingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationMeetingCell.m; sourceTree = "<group>"; };
+		2765DF841E2DE5D900BB847E /* NotificationMeetingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationMeetingCell.xib; sourceTree = "<group>"; };
+		2765DF851E2DE5D900BB847E /* SelecterWayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelecterWayView.h; sourceTree = "<group>"; };
+		2765DF861E2DE5D900BB847E /* SelecterWayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelecterWayView.m; sourceTree = "<group>"; };
+		2765DF871E2DE5D900BB847E /* SelecterWayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelecterWayView.xib; sourceTree = "<group>"; };
+		2765DF941E2DF6FF00BB847E /* VidyoClientSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoClientSample.h; path = ../CallCentre/Controller/VidyoClientSample.h; sourceTree = "<group>"; };
+		2765DF951E2DF6FF00BB847E /* VidyoClientSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VidyoClientSample.m; path = ../CallCentre/Controller/VidyoClientSample.m; sourceTree = "<group>"; };
+		27C591371E333FCA0002657E /* ESClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESClient.h; sourceTree = "<group>"; };
+		27C591381E333FCA0002657E /* ESClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESClient.m; sourceTree = "<group>"; };
+		27C5913B1E35AFE70002657E /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		27C5913C1E35AFE70002657E /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		27C5913D1E35AFE70002657E /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		27C5913E1E35AFE70002657E /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		27C5913F1E35AFE70002657E /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		27C591401E35AFE70002657E /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		27C591411E35AFE70002657E /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		27C591421E35AFE70002657E /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		27C591431E35AFE70002657E /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		27C591441E35AFE70002657E /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		27C591451E35AFE70002657E /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		27C591461E35AFE70002657E /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		27C591471E35AFE70002657E /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		55263677174BCC89007219D6 /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = SOURCE_ROOT; };
+		55563F16174A9BF6002416B3 /* VidyoClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoClient.h; path = VidyoClientLibrary/include/VidyoClient.h; sourceTree = "<group>"; };
+		55563F17174A9BF6002416B3 /* VidyoClientConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoClientConstants.h; path = VidyoClientLibrary/include/VidyoClientConstants.h; sourceTree = "<group>"; };
+		55563F18174A9BF6002416B3 /* VidyoClientMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoClientMessages.h; path = VidyoClientLibrary/include/VidyoClientMessages.h; sourceTree = "<group>"; };
+		55563F19174A9BF6002416B3 /* VidyoClientParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoClientParameters.h; path = VidyoClientLibrary/include/VidyoClientParameters.h; sourceTree = "<group>"; };
+		55563F1A174A9BF6002416B3 /* VidyoTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoTypes.h; path = VidyoClientLibrary/include/VidyoTypes.h; sourceTree = "<group>"; };
+		55563F1B174A9C28002416B3 /* VidyoClientLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = VidyoClientLib.a; path = VidyoClientLibrary/lib/VidyoClientLib.a; sourceTree = "<group>"; };
+		55563F1D174A9DCE002416B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		55AC5B6D18084AFA001C72D8 /* VidyoClientSample_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VidyoClientSample_iOS.entitlements; sourceTree = "<group>"; };
+		55ACA12617E10CC000AD8DC1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		55C58F9315AE17C8002AB90A /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		55C58F9415AE17C8002AB90A /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		94F244001A5C223200850B88 /* ca-certificates-base.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "ca-certificates-base.crt"; path = "VidyoClientLibrary/certificate/ca-certificates-base.crt"; sourceTree = "<group>"; };
+		F47F22C113FF04F1006471AD /* VidyoClientSample_iOS.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidyoClientSample_iOS.pch; sourceTree = "<group>"; };
+		F47F22C613FF0518006471AD /* main_ios.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main_ios.mm; sourceTree = "<group>"; };
+		F47F237113FF0642006471AD /* VidyoClientSample_iOS_Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = VidyoClientSample_iOS_Info.plist; path = sample/VidyoClientSample_iOS_Info.plist; sourceTree = "<group>"; };
+		F47F237313FF064B006471AD /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = sample/MainWindow.xib; sourceTree = "<group>"; };
+		F47F242713FF11B9006471AD /* VidyoClientSample_iOS_AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidyoClientSample_iOS_AppDelegate.h; sourceTree = "<group>"; };
+		F47F242813FF11B9006471AD /* VidyoClientSample_iOS_AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VidyoClientSample_iOS_AppDelegate.m; sourceTree = "<group>"; };
+		F483C314159E72C700F03FDD /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2764BC511E37115B001064E9 /* MobileCoreServices.framework in Frameworks */,
+				55ACA12717E10CC000AD8DC1 /* Security.framework in Frameworks */,
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
+				1A5A6F091298BEA9004DA40B /* OpenGLES.framework in Frameworks */,
+				1A5A6F111298BF87004DA40B /* AudioToolbox.framework in Frameworks */,
+				1A5A6FE81298CD85004DA40B /* QuartzCore.framework in Frameworks */,
+				1AB3C89712A43A56007B03C5 /* CoreVideo.framework in Frameworks */,
+				1AB3C89F12A43AFC007B03C5 /* CoreMedia.framework in Frameworks */,
+				1AB3C8A512A43B53007B03C5 /* AVFoundation.framework in Frameworks */,
+				1AD9C1DB12D8FB28009E04DC /* CFNetwork.framework in Frameworks */,
+				1A96AFBD1316070200993678 /* SystemConfiguration.framework in Frameworks */,
+				55563F1C174A9C28002416B3 /* VidyoClientLib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* VidyoClientSample_iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2765DF711E2DE5D900BB847E /* CallCentre */ = {
+			isa = PBXGroup;
+			children = (
+				2765DF721E2DE5D900BB847E /* Controller */,
+				2765DF7C1E2DE5D900BB847E /* Model */,
+				2765DF7F1E2DE5D900BB847E /* View */,
+			);
+			path = CallCentre;
+			sourceTree = "<group>";
+		};
+		2765DF721E2DE5D900BB847E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2765DF731E2DE5D900BB847E /* CallCentreViewController.h */,
+				2765DF741E2DE5D900BB847E /* CallCentreViewController.m */,
+				2765DF751E2DE5D900BB847E /* CallCentreViewController.xib */,
+				2765DF761E2DE5D900BB847E /* QueueStatusViewController.h */,
+				2765DF771E2DE5D900BB847E /* QueueStatusViewController.m */,
+				2765DF781E2DE5D900BB847E /* QueueStatusViewController.xib */,
+				2765DF791E2DE5D900BB847E /* VidyoVideoViewController.h */,
+				2765DF7A1E2DE5D900BB847E /* VidyoVideoViewController.m */,
+				2765DF7B1E2DE5D900BB847E /* VidyoVideoViewController.xib */,
+				2764BC521E373F0A001064E9 /* GuestloginViewController.h */,
+				2764BC531E373F0A001064E9 /* GuestloginViewController.m */,
+				2764BC541E373F0A001064E9 /* GuestloginViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2765DF7C1E2DE5D900BB847E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2765DF7D1E2DE5D900BB847E /* NotificationMeetingModel.h */,
+				2765DF7E1E2DE5D900BB847E /* NotificationMeetingModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2765DF7F1E2DE5D900BB847E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2765DF801E2DE5D900BB847E /* ChatTextView.h */,
+				2765DF811E2DE5D900BB847E /* ChatTextView.m */,
+				2765DF821E2DE5D900BB847E /* NotificationMeetingCell.h */,
+				2765DF831E2DE5D900BB847E /* NotificationMeetingCell.m */,
+				2765DF841E2DE5D900BB847E /* NotificationMeetingCell.xib */,
+				2765DF851E2DE5D900BB847E /* SelecterWayView.h */,
+				2765DF861E2DE5D900BB847E /* SelecterWayView.m */,
+				2765DF871E2DE5D900BB847E /* SelecterWayView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27C591361E333F280002657E /* Esoon */ = {
+			isa = PBXGroup;
+			children = (
+				27C591371E333FCA0002657E /* ESClient.h */,
+				27C591381E333FCA0002657E /* ESClient.m */,
+			);
+			name = Esoon;
+			path = CallCentre;
+			sourceTree = "<group>";
+		};
+		27C5913A1E35AFE70002657E /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				27C5913B1E35AFE70002657E /* AFHTTPSessionManager.h */,
+				27C5913C1E35AFE70002657E /* AFHTTPSessionManager.m */,
+				27C5913D1E35AFE70002657E /* AFNetworking.h */,
+				27C5913E1E35AFE70002657E /* AFNetworkReachabilityManager.h */,
+				27C5913F1E35AFE70002657E /* AFNetworkReachabilityManager.m */,
+				27C591401E35AFE70002657E /* AFSecurityPolicy.h */,
+				27C591411E35AFE70002657E /* AFSecurityPolicy.m */,
+				27C591421E35AFE70002657E /* AFURLRequestSerialization.h */,
+				27C591431E35AFE70002657E /* AFURLRequestSerialization.m */,
+				27C591441E35AFE70002657E /* AFURLResponseSerialization.h */,
+				27C591451E35AFE70002657E /* AFURLResponseSerialization.m */,
+				27C591461E35AFE70002657E /* AFURLSessionManager.h */,
+				27C591471E35AFE70002657E /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				55563F13174A9BD2002416B3 /* VidyoClientLibrary */,
+				F47F22BA13FF04F1006471AD /* sample */,
+				2765DF6C1E2DE5C500BB847E /* LoginWindow.h */,
+				2765DF6D1E2DE5C500BB847E /* LoginWindow.mm */,
+				2765DF6E1E2DE5C500BB847E /* LoginWindow.xib */,
+				27C591361E333F280002657E /* Esoon */,
+				2765DF711E2DE5D900BB847E /* CallCentre */,
+				F48DEEDF1438062500733D64 /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2764BC501E37115B001064E9 /* MobileCoreServices.framework */,
+				55ACA12617E10CC000AD8DC1 /* Security.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
+				1A5A6F081298BEA9004DA40B /* OpenGLES.framework */,
+				1A5A6F101298BF87004DA40B /* AudioToolbox.framework */,
+				1A5A6FE71298CD85004DA40B /* QuartzCore.framework */,
+				1AB3C89612A43A56007B03C5 /* CoreVideo.framework */,
+				1AB3C89E12A43AFC007B03C5 /* CoreMedia.framework */,
+				1AB3C8A412A43B53007B03C5 /* AVFoundation.framework */,
+				1AD9C1DA12D8FB28009E04DC /* CFNetwork.framework */,
+				1A96AFBC1316070200993678 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55263676174BCA4D007219D6 /* certificates */ = {
+			isa = PBXGroup;
+			children = (
+				94F244001A5C223200850B88 /* ca-certificates-base.crt */,
+			);
+			name = certificates;
+			sourceTree = "<group>";
+		};
+		55563F13174A9BD2002416B3 /* VidyoClientLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				55263676174BCA4D007219D6 /* certificates */,
+				55563F15174A9BE2002416B3 /* include */,
+				55563F14174A9BDD002416B3 /* lib */,
+			);
+			name = VidyoClientLibrary;
+			sourceTree = "<group>";
+		};
+		55563F14174A9BDD002416B3 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				55563F1B174A9C28002416B3 /* VidyoClientLib.a */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		55563F15174A9BE2002416B3 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				55563F16174A9BF6002416B3 /* VidyoClient.h */,
+				55563F17174A9BF6002416B3 /* VidyoClientConstants.h */,
+				55563F18174A9BF6002416B3 /* VidyoClientMessages.h */,
+				55563F19174A9BF6002416B3 /* VidyoClientParameters.h */,
+				55563F1A174A9BF6002416B3 /* VidyoTypes.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		55AC5B6A18084AB6001C72D8 /* entitlements */ = {
+			isa = PBXGroup;
+			children = (
+				55AC5B6D18084AFA001C72D8 /* VidyoClientSample_iOS.entitlements */,
+			);
+			name = entitlements;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F47F22BA13FF04F1006471AD /* sample */ = {
+			isa = PBXGroup;
+			children = (
+				55AC5B6A18084AB6001C72D8 /* entitlements */,
+				55263677174BCC89007219D6 /* ReleaseNotes.txt */,
+				F47F242713FF11B9006471AD /* VidyoClientSample_iOS_AppDelegate.h */,
+				F47F22C613FF0518006471AD /* main_ios.mm */,
+				F47F242813FF11B9006471AD /* VidyoClientSample_iOS_AppDelegate.m */,
+				2765DF941E2DF6FF00BB847E /* VidyoClientSample.h */,
+				2765DF951E2DF6FF00BB847E /* VidyoClientSample.m */,
+				F47F22C113FF04F1006471AD /* VidyoClientSample_iOS.pch */,
+				55C58F9315AE17C8002AB90A /* NSString+Base64.h */,
+				55C58F9415AE17C8002AB90A /* NSString+Base64.m */,
+			);
+			path = sample;
+			sourceTree = "<group>";
+		};
+		F48DEEDF1438062500733D64 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27C5913A1E35AFE70002657E /* AFNetworking */,
+				F47F237113FF0642006471AD /* VidyoClientSample_iOS_Info.plist */,
+				55563F1D174A9DCE002416B3 /* Default-568h@2x.png */,
+				F483C314159E72C700F03FDD /* Icon.png */,
+				F47F237313FF064B006471AD /* MainWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* VidyoClientSample_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "VidyoClientSample_iOS" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VidyoClientSample_iOS;
+			productName = NoGuiClient;
+			productReference = 1D6058910D05DD3D006BFB54 /* VidyoClientSample_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = B37H7UGQWS;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "VidyoClientSample_iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* VidyoClientSample_iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2765DF891E2DE5D900BB847E /* CallCentreViewController.xib in Resources */,
+				F47F237413FF064B006471AD /* MainWindow.xib in Resources */,
+				2765DF701E2DE5C500BB847E /* LoginWindow.xib in Resources */,
+				2765DF8D1E2DE5D900BB847E /* VidyoVideoViewController.xib in Resources */,
+				94F244011A5C223200850B88 /* ca-certificates-base.crt in Resources */,
+				F483C315159E72C700F03FDD /* Icon.png in Resources */,
+				2765DF911E2DE5D900BB847E /* NotificationMeetingCell.xib in Resources */,
+				55563F1E174A9DCE002416B3 /* Default-568h@2x.png in Resources */,
+				2765DF8B1E2DE5D900BB847E /* QueueStatusViewController.xib in Resources */,
+				2764BC561E373F0A001064E9 /* GuestloginViewController.xib in Resources */,
+				2765DF931E2DE5D900BB847E /* SelecterWayView.xib in Resources */,
+				55263678174BCC89007219D6 /* ReleaseNotes.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F47F22C713FF0518006471AD /* main_ios.mm in Sources */,
+				2764BC551E373F0A001064E9 /* GuestloginViewController.m in Sources */,
+				27C591391E333FCA0002657E /* ESClient.m in Sources */,
+				F47F242913FF11B9006471AD /* VidyoClientSample_iOS_AppDelegate.m in Sources */,
+				2765DF961E2DF6FF00BB847E /* VidyoClientSample.m in Sources */,
+				2765DF6F1E2DE5C500BB847E /* LoginWindow.mm in Sources */,
+				27C591481E35AFE70002657E /* AFHTTPSessionManager.m in Sources */,
+				2765DF921E2DE5D900BB847E /* SelecterWayView.m in Sources */,
+				27C591491E35AFE70002657E /* AFNetworkReachabilityManager.m in Sources */,
+				2765DF901E2DE5D900BB847E /* NotificationMeetingCell.m in Sources */,
+				2765DF8A1E2DE5D900BB847E /* QueueStatusViewController.m in Sources */,
+				27C5914D1E35AFE70002657E /* AFURLSessionManager.m in Sources */,
+				27C5914C1E35AFE70002657E /* AFURLResponseSerialization.m in Sources */,
+				2765DF8E1E2DE5D900BB847E /* NotificationMeetingModel.m in Sources */,
+				55C58F9515AE17C8002AB90A /* NSString+Base64.m in Sources */,
+				27C5914B1E35AFE70002657E /* AFURLRequestSerialization.m in Sources */,
+				27C5914A1E35AFE70002657E /* AFSecurityPolicy.m in Sources */,
+				2765DF8C1E2DE5D900BB847E /* VidyoVideoViewController.m in Sources */,
+				2765DF881E2DE5D900BB847E /* CallCentreViewController.m in Sources */,
+				2765DF8F1E2DE5D900BB847E /* ChatTextView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = VidyoClientSample_iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = B37H7UGQWS;
+				ENABLE_BITCODE = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = sample/VidyoClientSample_iOS.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = VIDYO_MACOS;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = sample/VidyoClientSample_iOS_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VidyoClientLibrary/lib\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidyo.VidyoClientSamplepp999999;
+				PRODUCT_NAME = VidyoClientSample_iOS;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = VidyoClientSample_iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = B37H7UGQWS;
+				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = sample/VidyoClientSample_iOS.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = VIDYO_MACOS;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = sample/VidyoClientSample_iOS_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/VidyoClientLibrary/lib\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidyo.VidyoClientSamplepp999999;
+				PRODUCT_NAME = VidyoClientSample_iOS;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT) ";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT) ";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-all_load";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "VidyoClientSample_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "VidyoClientSample_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
