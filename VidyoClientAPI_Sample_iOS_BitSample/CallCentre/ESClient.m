@@ -4,7 +4,6 @@
 //
 //  Created by 赖长宽 on 2017/1/21.
 //
-//
 
 #import "ESClient.h"
 #import "AFNetworking.h"
@@ -13,7 +12,6 @@
 @property (nonatomic ,copy) NSString * userId;
 @property (nonatomic ,copy) NSString * userName;
 
-@property (nonatomic ,assign)NSInteger  roomid;
 
 @property (nonatomic ,copy) NSString  * urlstring;
 
@@ -26,11 +24,6 @@
 +(BOOL)ESClientInitialize:(NSDictionary *)esuser controller:(UICollectionView*)controller
 {
  
-    
-    
-   
-    
-    
     
     
     
@@ -63,14 +56,6 @@
         
         
         NSLog(@"%@",[[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil] encoding:NSUTF8StringEncoding]);
-        
-        NSDictionary *CreateRoomdict=@{
-                                       @"roomName":@"一二三",
-                                       @"roomLocation":@"福州",
-                                       @"roomSubject":@"关于abc"
-                                       };
-        
-//        [self esClientCreateRoom:CreateRoomdict];
         
         
         
@@ -106,7 +91,11 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         
-               self.roomid=responseObject[@"room"][@"roomId"];
+        NSUserDefaults *useDefaults = [NSUserDefaults standardUserDefaults];
+        
+        [useDefaults setObject:responseObject[@"room"][@"roomId"] forKey:@"roomId"];
+        
+        
         
         NSString * keyValue  =responseObject[@"room"][@"roomInvitedLink"];
         
@@ -115,11 +104,6 @@
        
             NSString *value = [[pairs objectAtIndex:1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-
-        
-        
-//        NSLog(@"%@",[[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil] encoding:NSUTF8StringEncoding]);
-//  
 
         NSDictionary * data=@{
            @"key":value,
@@ -139,8 +123,8 @@
 {
     
     
-    NSDictionary *dic=@{@"userId":self.userId,
-                        @"roomId":@(self.roomid),
+    NSDictionary *dic=@{@"userId":userId,
+                        @"roomId":@(roomId),
                         @"deletetype":@2};
     AFHTTPSessionManager*manger=[AFHTTPSessionManager manager];
     manger.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -166,10 +150,15 @@
     
     
 }
--(void)esClientLogout:(NSString *)userId
+-(void)esClientLogout
 {
     
+    
+    self.userId=[[NSUserDefaults standardUserDefaults] objectForKey:@"userId"];
+
     NSDictionary *dic=@{@"userId":self.userId};
+    
+    
     AFHTTPSessionManager*   manger=[AFHTTPSessionManager manager];
     manger.requestSerializer = [AFJSONRequestSerializer serializer];
     manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", nil];
@@ -179,9 +168,12 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
+        NSDictionary * data=@{
+                              @"statusCode":responseObject[@"statusCode"]
+                              };
         
+        self.actionBlock(data);
         
-        NSLog(@"%@",[[NSString alloc]initWithData:[NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil] encoding:NSUTF8StringEncoding]);
         
         
         
@@ -194,5 +186,78 @@
 }
 
 
+-(void)esClientQueryRoom:(NSString *_Nullable )userId userName:( NSString *  _Nullable)userName
+                 getType:(int)getType
+{
+
+    NSDictionary *dic=@{@"userId":userId,@"getType":@(getType)};
+    
+    
+    AFHTTPSessionManager*   manger=[AFHTTPSessionManager manager];
+    manger.requestSerializer = [AFJSONRequestSerializer serializer];
+    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", nil];
+    //        [manger.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [ manger POST:@"http://192.168.4.143:8090/api/v1/video/vidyo/queryRoom" parameters:dic progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        
+        
+        
+        NSDictionary * data=@{
+                              };
+        
+        self.actionBlock(data);
+        
+        
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+
+
+    
+
+}
+// 查询当前排队数
+-(void)esClientQueueinfo
+{
+
+    
+    NSString * roomId= [[NSUserDefaults standardUserDefaults] objectForKey:@"roomId"];
+
+    
+    NSDictionary *dic=@{@"roomId":roomId};
+    
+    
+    AFHTTPSessionManager*   manger=[AFHTTPSessionManager manager];
+    manger.requestSerializer = [AFJSONRequestSerializer serializer];
+    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json", nil];
+    //        [manger.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [ manger POST:@"http://192.168.4.143:8090/api/v1/video/queueinfo" parameters:dic progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        
+        
+        
+        NSDictionary * data=@{
+                              @"queuenum":responseObject[@"queueinfo"][@"queuenum"]
+                              };
+        
+        self.actionBlock(data);
+        
+        
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+
+
+}
 
 @end

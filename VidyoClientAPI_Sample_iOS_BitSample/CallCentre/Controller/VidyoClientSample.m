@@ -27,7 +27,7 @@ void vidyoClientSampleOnVidyoClientEvent(VidyoClientOutEvent event,
 	VidyoClientSample_iOS_AppDelegate *appDelegate = (__bridge VidyoClientSample_iOS_AppDelegate*)data;
     
 	NSLog(@"Received event=%d", event);
-	
+	 
 	if (event >= VIDYO_CLIENT_OUT_EVENT_MIN
 		&& event <= VIDYO_CLIENT_OUT_EVENT_MAX)
 	{
@@ -107,13 +107,13 @@ void vidyoClientSampleOnVidyoClientEvent(VidyoClientOutEvent event,
 						[[appDelegate viewController] setIsSigningIn:FALSE];
 					}
 					
-                    NSLog(@"Got VIDYO_CLIENT_OUT_EVENT_SIGNED_OUT event - setting isInCall = false");
+//                    NSLog(@"Got VIDYO_CLIENT_OUT_EVENT_SIGNED_OUT event - setting isInCall = false");
                     [[appDelegate viewController] setIsInCall:FALSE];
-                    
-					NSString *alertMsg = [NSString stringWithFormat:@"You are signed out"];															  
-					UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertMsg message:@"" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-					[alert show];
-					[alert release];
+//
+//					NSString *alertMsg = [NSString stringWithFormat:@"You are signed out"];															  
+//					UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertMsg message:@"" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+//					[alert show];
+//					[alert release];
 				});
                 break;
             }

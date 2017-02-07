@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgeView;
 @property (weak, nonatomic) IBOutlet UILabel *loginName;
 @property (weak, nonatomic) IBOutlet UILabel *stateLabel;
-@property (nonatomic ,strong)  NSNumber  *retCode;
 
 @end
 
@@ -26,26 +25,6 @@
 }
 -(void)setupQueue
 {
-    
-//    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-//       [dict setObject:@"queueNumber.action" forKey:@"operation"];
-//    
-//       [dict setObject:@"test5" forKey:@"userid"];
-//    
-//   AFHTTPSessionManager *manger= [AFHTTPSessionManager manager];
-//    manger.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain", nil];
-//    
-//    [ manger POST:@"http://192.168.5.49:8580/Every360/Every360Api" parameters:dict progress:^(NSProgress * _Nonnull uploadProgress) {
-//        
-//     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//         
-//         
-//         
-//         
-//     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//         NSLog(@"%@",error);
-//     }];
-//    
     
     dispatch_queue_t queue =  dispatch_queue_create("yx", NULL);
     
@@ -70,24 +49,23 @@
             //8.解析数据
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
             self.stateLabel.text=[NSString stringWithFormat:@"状态:正在获取排队数..."];
-            dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0/*延迟执行时间*/ * NSEC_PER_SEC));
-            
-            dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-                
-                self.stateLabel.text=[NSString stringWithFormat:@"状态:还有%@人排队中...",dict[@"RetCode"]];
-                
-            });
-            
+
 
             
         }];
         
         //7.执行任务
         [dataTask resume];
-        
-        
+//
+//        
     });
 
+//    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0/*延迟执行时间*/ * NSEC_PER_SEC));
+//
+//    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+//      
+//                    });
+    
 }
 - (IBAction)giveUpTheCall:(UIButton *)sender {
     

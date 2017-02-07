@@ -24,7 +24,6 @@
 }
 +(instancetype) appWithDict:(NSDictionary *)dict{
     
-    // 为何使用self，谁调用self方法 self就会指向谁！！
     return [[self alloc] initWithDict:dict];
     
 }

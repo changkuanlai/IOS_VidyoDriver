@@ -17,6 +17,7 @@
 		1AD9C1DB12D8FB28009E04DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9C1DA12D8FB28009E04DC /* CFNetwork.framework */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		273857A01E45ADE400400594 /* VidyoClientLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2738579F1E45ADE400400594 /* VidyoClientLib.a */; };
 		2764BC511E37115B001064E9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2764BC501E37115B001064E9 /* MobileCoreServices.framework */; };
 		2764BC551E373F0A001064E9 /* GuestloginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2764BC531E373F0A001064E9 /* GuestloginViewController.m */; };
 		2764BC561E373F0A001064E9 /* GuestloginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2764BC541E373F0A001064E9 /* GuestloginViewController.xib */; };
@@ -44,7 +45,6 @@
 		27C5914D1E35AFE70002657E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 27C591471E35AFE70002657E /* AFURLSessionManager.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		55263678174BCC89007219D6 /* ReleaseNotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 55263677174BCC89007219D6 /* ReleaseNotes.txt */; };
-		55563F1C174A9C28002416B3 /* VidyoClientLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55563F1B174A9C28002416B3 /* VidyoClientLib.a */; };
 		55563F1E174A9DCE002416B3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55563F1D174A9DCE002416B3 /* Default-568h@2x.png */; };
 		55ACA12717E10CC000AD8DC1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ACA12617E10CC000AD8DC1 /* Security.framework */; };
 		55C58F9515AE17C8002AB90A /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C58F9415AE17C8002AB90A /* NSString+Base64.m */; };
@@ -67,6 +67,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* VidyoClientSample_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VidyoClientSample_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2738579F1E45ADE400400594 /* VidyoClientLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VidyoClientLib.a; sourceTree = "<group>"; };
 		2764BC501E37115B001064E9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2764BC521E373F0A001064E9 /* GuestloginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuestloginViewController.h; sourceTree = "<group>"; };
 		2764BC531E373F0A001064E9 /* GuestloginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuestloginViewController.m; sourceTree = "<group>"; };
@@ -117,7 +118,6 @@
 		55563F18174A9BF6002416B3 /* VidyoClientMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoClientMessages.h; path = VidyoClientLibrary/include/VidyoClientMessages.h; sourceTree = "<group>"; };
 		55563F19174A9BF6002416B3 /* VidyoClientParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoClientParameters.h; path = VidyoClientLibrary/include/VidyoClientParameters.h; sourceTree = "<group>"; };
 		55563F1A174A9BF6002416B3 /* VidyoTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VidyoTypes.h; path = VidyoClientLibrary/include/VidyoTypes.h; sourceTree = "<group>"; };
-		55563F1B174A9C28002416B3 /* VidyoClientLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = VidyoClientLib.a; path = VidyoClientLibrary/lib/VidyoClientLib.a; sourceTree = "<group>"; };
 		55563F1D174A9DCE002416B3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		55AC5B6D18084AFA001C72D8 /* VidyoClientSample_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VidyoClientSample_iOS.entitlements; sourceTree = "<group>"; };
 		55ACA12617E10CC000AD8DC1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -138,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				273857A01E45ADE400400594 /* VidyoClientLib.a in Frameworks */,
 				2764BC511E37115B001064E9 /* MobileCoreServices.framework in Frameworks */,
 				55ACA12717E10CC000AD8DC1 /* Security.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -151,7 +152,6 @@
 				1AB3C8A512A43B53007B03C5 /* AVFoundation.framework in Frameworks */,
 				1AD9C1DB12D8FB28009E04DC /* CFNetwork.framework in Frameworks */,
 				1A96AFBD1316070200993678 /* SystemConfiguration.framework in Frameworks */,
-				55563F1C174A9C28002416B3 /* VidyoClientLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +307,7 @@
 		55563F14174A9BDD002416B3 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				55563F1B174A9C28002416B3 /* VidyoClientLib.a */,
+				2738579F1E45ADE400400594 /* VidyoClientLib.a */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -495,6 +495,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VidyoClientLibrary/lib\"",
+					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
@@ -528,6 +529,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/VidyoClientLibrary/lib\"",
+					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";

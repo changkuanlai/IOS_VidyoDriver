@@ -71,6 +71,9 @@ static NSString *const NotMeetingcellID=@"meeting";
     [self setUprequest];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notifiLogin) name:@"loginSuccessful" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notifSignedin) name:@"Successfullysignedin" object:nil];
+
+    
     UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake(20, 25, 40, 30)];
     [button addTarget:self action:@selector(exitlogin) forControlEvents:UIControlEventTouchUpInside];
     [button setTitle:@"退出" forState:UIControlStateNormal];
@@ -88,15 +91,73 @@ static NSString *const NotMeetingcellID=@"meeting";
 
     [self.view addSubview:Guestbutton];
     
-//    [ESClient login];
     
 }
 -(void)notifiLogin
 {
     VidyoVideoViewController *vidyo=[[VidyoVideoViewController alloc]init];
     [self presentViewController:vidyo animated:NO completion:nil];
+    
+    
 }
+-(void)notifSignedin
+{
+    
+    
+    NSString *userPortal = @"http://192.168.5.47";
+    
+    
+    /* The joinConference is broken into 2 steps
+     * Step1: get the entityID from VidyoPortal using WS User::myAccount() API
+     * Step2: if entityID is successfully retrieved and the entity is 'online', do WS User::joinConference
+     */
+    _vidyoEntityID = nil;
+    NSString *urlString = [NSString stringWithFormat:@"%@/services/v1_1/VidyoPortalUserService", userPortal];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+    
+    // Get the EntityId from VidyoPortal using WS User::myAccount
+    NSString *soapMessage = [NSString stringWithFormat:
+                             @"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+                             "<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:ns1=\"http://portal.vidyo.com/user/v1_1\">"
+                             "<env:Body>"
+                             "<ns1:MyAccountRequest/>"
+                             "</env:Body>"
+                             "</env:Envelope>"];
+    
+    // NSLog(@"%@", soapMessage);
+    
+    NSString *msgLength = [NSString stringWithFormat:@"%lu",(unsigned long)[soapMessage length]];
+    [theRequest addValue: @"application/soap+xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [theRequest addValue: @"myAccount" forHTTPHeaderField:@"SOAPAction"];
+    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
+    
+    NSString *base64 = [[NSString stringWithFormat:@"%@:%@", @"test5", @"123456"] base64];
+    NSString *auth = [NSString stringWithFormat:@"Basic %@", base64];
+    [theRequest addValue: auth forHTTPHeaderField:@"Authorization"];
+    
+    [theRequest setHTTPMethod:@"POST"];
+    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    if( theConnection )
+    {
+        _webData = [[NSMutableData data] init];
+    }
+    else
+    {
+        NSLog(@"theConnection is NULL");
+    }
+    
+    _joinStatus = TRUE;
+    //    NSLog(@"*********************SENT SOAP Request myAccount() ******************************");
+    
+    
+    
+    
+    
 
+}
 // 退出登录
 -(void)exitlogin
 {
@@ -226,110 +287,49 @@ static NSString *const NotMeetingcellID=@"meeting";
 }
 -(void )tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    dispatch_queue_t queue =  dispatch_queue_create("esx", NULL);
-    dispatch_async(queue, ^{
-        
-        
-        
-        // Initaite the local sign in process
-        VidyoClientInEventLogIn event = {0};
-        NSString *userVPortal = @"http://192.168.5.47";
-        NSString *userVName = @"test5";
-        NSString *userVPass = @"123456";
-        
-        strlcpy(event.portalUri, [userVPortal UTF8String], sizeof(event.portalUri));
-        strlcpy(event.userName, [userVName UTF8String], sizeof(event.userName));
-        strlcpy(event.userPass, [userVPass UTF8String], sizeof(event.userPass));
-        
-        // hide keyboard
-        [self.view endEditing:TRUE];
-        
-        //        /* Create wait alert */
-        //        signingInAlert = [[[UIAlertView alloc] initWithTitle:@"Signing in\nPlease Wait..." message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil] autorelease];
-        //        [signingInAlert show];
-        //
-        //        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-        //
-        //        // Adjust the indicator so it is up a few pixels from the bottom of the alert
-        //        indicator.center = CGPointMake(signingInAlert.bounds.size.width / 2, signingInAlert.bounds.size.height - 50);
-        //        [indicator startAnimating];
-        //        [signingInAlert addSubview:indicator];
-        //        [indicator release];
-        
-        // send login-event to VidyoClient
-        if (VidyoClientSendEvent(VIDYO_CLIENT_IN_EVENT_LOGIN, &event, sizeof(VidyoClientInEventLogIn)) == false)
-        {
-            //            [signingInAlert dismissWithClickedButtonIndex:0 animated:YES];
-            
-            NSString *alertMsg = [NSString stringWithFormat:@"Failed to sign in"];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertMsg message:@"" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-            [alert show];
-            //            [alert release];
-            
-        }
-        else
-        {
-            _isSigningIn = TRUE;
-            
-            
-        }
-        
-        
-        
-    });
+   
     
+    VidyoClientInEventLogIn event = {0};
+    NSString *userVPortal = @"http://192.168.5.47";
+    NSString *userVName = @"test5";
+    NSString *userVPass = @"123456";
     
+    strlcpy(event.portalUri, [userVPortal UTF8String], sizeof(event.portalUri));
+    strlcpy(event.userName, [userVName UTF8String], sizeof(event.userName));
+    strlcpy(event.userPass, [userVPass UTF8String], sizeof(event.userPass));
     
-    NSString *userPortal = @"http://192.168.5.47";
+    // hide keyboard
+    //        [self.view endEditing:TRUE];
     
+    //        /* Create wait alert */
+    //        signingInAlert = [[[UIAlertView alloc] initWithTitle:@"Signing in\nPlease Wait..." message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil] autorelease];
+    //        [signingInAlert show];
+    //
+    //        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    //
+    //        // Adjust the indicator so it is up a few pixels from the bottom of the alert
+    //        indicator.center = CGPointMake(signingInAlert.bounds.size.width / 2, signingInAlert.bounds.size.height - 50);
+    //        [indicator startAnimating];
+    //        [signingInAlert addSubview:indicator];
+    //        [indicator release];
     
-    /* The joinConference is broken into 2 steps
-     * Step1: get the entityID from VidyoPortal using WS User::myAccount() API
-     * Step2: if entityID is successfully retrieved and the entity is 'online', do WS User::joinConference
-     */
-    _vidyoEntityID = nil;
-    NSString *urlString = [NSString stringWithFormat:@"%@/services/v1_1/VidyoPortalUserService", userPortal];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    
-    // Get the EntityId from VidyoPortal using WS User::myAccount
-    NSString *soapMessage = [NSString stringWithFormat:
-                             @"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-                             "<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:ns1=\"http://portal.vidyo.com/user/v1_1\">"
-                             "<env:Body>"
-                             "<ns1:MyAccountRequest/>"
-                             "</env:Body>"
-                             "</env:Envelope>"];
-    
-    // NSLog(@"%@", soapMessage);
-    
-    NSString *msgLength = [NSString stringWithFormat:@"%lu",(unsigned long)[soapMessage length]];
-    [theRequest addValue: @"application/soap+xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [theRequest addValue: @"myAccount" forHTTPHeaderField:@"SOAPAction"];
-    [theRequest addValue: msgLength forHTTPHeaderField:@"Content-Length"];
-    
-    NSString *base64 = [[NSString stringWithFormat:@"%@:%@", @"test5", @"123456"] base64];
-    NSString *auth = [NSString stringWithFormat:@"Basic %@", base64];
-    [theRequest addValue: auth forHTTPHeaderField:@"Authorization"];
-    
-    [theRequest setHTTPMethod:@"POST"];
-    [theRequest setHTTPBody: [soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
-    
-    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
-    if( theConnection )
+    // send login-event to VidyoClient
+    if (VidyoClientSendEvent(VIDYO_CLIENT_IN_EVENT_LOGIN, &event, sizeof(VidyoClientInEventLogIn)) == false)
     {
-        _webData = [[NSMutableData data] init];
+        //            [signingInAlert dismissWithClickedButtonIndex:0 animated:YES];
+        
+        NSString *alertMsg = [NSString stringWithFormat:@"Failed to sign in"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:alertMsg message:@"" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+        //            [alert release];
+        
     }
     else
     {
-        NSLog(@"theConnection is NULL");
+        _isSigningIn = TRUE;
+        
+        
     }
-    
-    _joinStatus = TRUE;
-//    NSLog(@"*********************SENT SOAP Request myAccount() ******************************");
-    
-    
-    
     
 }
 
@@ -486,6 +486,9 @@ static NSString *const NotMeetingcellID=@"meeting";
                 [alert show];
                 
             });
+        }else{
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"loginSuccessful" object:nil];
+
         }
     }
     
@@ -499,7 +502,6 @@ static NSString *const NotMeetingcellID=@"meeting";
         return;
     }
     
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"loginSuccessful" object:nil];
 
     
     if( [element isEqualToString:@"MyAccountResponse"])

@@ -195,9 +195,9 @@
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSLog(@"paths = %@", paths);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"documentsDirectory = %@", documentsDirectory);
+//    NSLog(@"documentsDirectory = %@", documentsDirectory);
 	documentsDirectory = [documentsDirectory stringByAppendingString:@"/"];
-    NSLog(@"documentsDirectory = %@", documentsDirectory);
+//    NSLog(@"documentsDirectory = %@", documentsDirectory);
 	const char *pathToLogDir = [documentsDirectory cStringUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"pathToLogDir = %s", pathToLogDir);
     

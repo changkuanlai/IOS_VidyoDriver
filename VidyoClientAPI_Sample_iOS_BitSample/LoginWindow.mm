@@ -37,8 +37,6 @@
     
     //    [ESClient login];
     
-  
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(successfully) name:@"Successfullysignedin" object:nil];
 }
 -(void)Guestlogin
 {
@@ -76,6 +74,11 @@
     coview.textName=passwordField.text;
     
     [self presentViewController:coview animated:NO completion:nil];
+    
+    
+       
+    
+    
 	}
 
 
@@ -107,17 +110,7 @@
 
 -(BOOL) shouldAutorotate
 {
-//    NSLog(@"shouldAutorotate invoked by %@", self.class);
-//    Boolean shouldRotate = YES;
-//    if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1)
-//    {
-//        if (self.isInCall)
-//            shouldRotate = NO;
-//    }
-//    
-//    NSLog(@"shouldRotate is returning %d", shouldRotate);
-//    
-//    return shouldRotate;
+
     
     return YES;
 }

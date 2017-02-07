@@ -20,7 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *chatTextView;
 @property (weak, nonatomic) IBOutlet UITextField *fieldText;
-@property (nonatomic ,strong) UILabel *label ;
+@property (nonatomic ,strong) UILabel * label;
 @property (weak, nonatomic) IBOutlet UIView *tbBarView;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
 
@@ -80,11 +80,25 @@ bool getBool(VidyoVoidPtr param,VidyoClientInEvent event){
     
     self.chatTextView.hidden=NO;
     
-    VidyoClientDeviceInfo info={0};
-    (void)VidyoClientSendEvent(VIDYO_CLIENT_IN_EVENT_TOGGLE_CAMERA , &info, sizeof(info));
+//    VidyoClientDeviceInfo info={0};
+//    (void)VidyoClientSendEvent(VIDYO_CLIENT_IN_EVENT_TOGGLE_CAMERA , &info, sizeof(info));
+//    
+//    info.location=VIDYO_VIDEOCAPTURERLOCATION_Back;
     
-    info.location=VIDYO_VIDEOCAPTURERLOCATION_Back;
+    VidyoClientInEventGroupChat sendMessage={0};
     
+    
+
+   const  char  * pathToLogDir = [@"A" UTF8String];
+    
+
+    
+//    NSLog(@"-----------dfsf------%@",sendMessage);
+    sendMessage.message[0]=pathToLogDir;
+    
+//    NSLog(@"-------%c",sendMessage.message[2]);
+    VidyoClientSendEvent (VIDYO_CLIENT_IN_EVENT_GROUP_CHAT, &sendMessage, sizeof(sendMessage));
+
     
 }
  // 禁止话筒输入
@@ -166,12 +180,8 @@ bool getBool(VidyoVoidPtr param,VidyoClientInEvent event){
 //    
 //    app2.window.rootViewController=ss;
     
-    
-    
-   
  
 //
-    
     
 }
 
@@ -182,8 +192,7 @@ bool getBool(VidyoVoidPtr param,VidyoClientInEvent event){
     
      VidyoClientInEventMute  conf = {0};
     static BOOL isopen ;
-//
-//    
+    
     if (isopen) {
         
         conf.willMute=VIDYO_TRUE;
@@ -202,7 +211,14 @@ bool getBool(VidyoVoidPtr param,VidyoClientInEvent event){
     
 }
 
-
+// 发送消息
+- (IBAction)sendM:(id)sender {
+    
+    
+   
+    
+    
+}
 
 
 

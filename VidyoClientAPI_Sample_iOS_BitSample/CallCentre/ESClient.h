@@ -11,7 +11,7 @@
 @interface ESClient : NSObject
 
 
-@property (copy, nonatomic) void (^actionBlock) (NSDictionary *);
+@property (copy, nonatomic) void (^actionBlock) (NSDictionary * _Nonnull );
 
 
 /**
@@ -27,5 +27,19 @@
 
 
 -(void)esClientCreateRoom:(NSDictionary * _Nonnull)roomDict;
+
+
+-(void)esClientLogout;
+
+
+// 查询房间接口
+-(void)esClientQueryRoom:(NSString *_Nullable )userId userName:( NSString *  _Nullable)userName
+                 getType:(int)getType;
+
+// 队列排队数查询接口
+-(void)esClientQueueinfo;
+
+
+
 
 @end

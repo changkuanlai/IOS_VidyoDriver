@@ -1143,8 +1143,8 @@ typedef enum  VidyoClientOutEvent_
 	VIDYO_CLIENT_OUT_EVENT_CALL_STATE = 2500,
 
 	/*!
-		The text message received as part of a group chat from a remote participant.
 
+     
 		@see Corresponding parameter structure #VidyoClientOutEventGroupChat
 	 */
 	VIDYO_CLIENT_OUT_EVENT_GROUP_CHAT = 2600,
